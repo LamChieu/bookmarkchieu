@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import AddBookMark from "./components/AddBookMark";
+import BookMarks from "./components/BookMarks";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import UpdateBookMark from "./components/UpdateBookMark";
 
 function App() {
+  const [isShow, setIsShow] = useState(false);
+  const [bookMark, setBookMark] = useState({
+    _id: "",
+    title: "",
+    url: "",
+    user: "",
+  });
+  const [isAuth, setIsAuth] = useState(false);
+  const [idUser, setIdUser] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        {!isAuth && <Login auth={setIsAuth} id={setIdUser} />}
+        {isAuth && <Logout auth={setIsAuth} id={setIdUser} />}
+      </div>
+      {isAuth && (
+        <div>
+          <AddBookMark id={idUser} />
+          {isShow && (
+            <UpdateBookMark
+              current={bookMark}
+              isShow={setIsShow}
+              show={isShow}
+            />
+          )}
+          <BookMarks
+            id={idUser}
+            isShow={setIsShow}
+            show={isShow}
+            setCurrent={setBookMark}
+          />
+        </div>
+      )}
     </div>
   );
 }
