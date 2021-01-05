@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/bookmarkchieu/static/css/main.1f356a75.chunk.css",
+    "main.js": "/bookmarkchieu/static/js/main.2914c977.chunk.js",
+    "main.js.map": "/bookmarkchieu/static/js/main.2914c977.chunk.js.map",
+    "runtime-main.js": "/bookmarkchieu/static/js/runtime-main.8b75ce06.js",
+    "runtime-main.js.map": "/bookmarkchieu/static/js/runtime-main.8b75ce06.js.map",
+    "static/js/2.96b547b8.chunk.js": "/bookmarkchieu/static/js/2.96b547b8.chunk.js",
+    "static/js/2.96b547b8.chunk.js.map": "/bookmarkchieu/static/js/2.96b547b8.chunk.js.map",
+    "index.html": "/bookmarkchieu/index.html",
+    "static/css/main.1f356a75.chunk.css.map": "/bookmarkchieu/static/css/main.1f356a75.chunk.css.map",
+    "static/js/2.96b547b8.chunk.js.LICENSE.txt": "/bookmarkchieu/static/js/2.96b547b8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b75ce06.js",
+    "static/js/2.96b547b8.chunk.js",
+    "static/css/main.1f356a75.chunk.css",
+    "static/js/main.2914c977.chunk.js"
+  ]
+}
