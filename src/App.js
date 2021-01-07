@@ -5,6 +5,7 @@ import BookMarks from "./components/BookMarks";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import UpdateBookMark from "./components/UpdateBookMark";
+import Header from "./components/Header.js"
 
 function App() {
   const [isShow, setIsShow] = useState(false);
@@ -24,21 +25,24 @@ function App() {
         {isAuth && <Logout auth={setIsAuth} id={setIdUser} />}
       </div>
       {isAuth && (
-        <div>
-          <AddBookMark id={idUser} />
-          {isShow && (
-            <UpdateBookMark
-              current={bookMark}
+        <div >
+          <Header />
+          <div className="main-bookmark container">
+            <AddBookMark id={idUser} />
+            {isShow && (
+              <UpdateBookMark
+                current={bookMark}
+                isShow={setIsShow}
+                show={isShow}
+              />
+            )}
+            <BookMarks
+              id={idUser}
               isShow={setIsShow}
               show={isShow}
+              setCurrent={setBookMark}
             />
-          )}
-          <BookMarks
-            id={idUser}
-            isShow={setIsShow}
-            show={isShow}
-            setCurrent={setBookMark}
-          />
+          </div>
         </div>
       )}
     </div>

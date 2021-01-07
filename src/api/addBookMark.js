@@ -4,6 +4,8 @@ const addBookMark = {
   add: (formValue) => {
     if (formValue === {}) return;
 
+    console.log(formValue)
+
     const url = "/bookmark";
     return axiosClient.post(url, formValue);
   },

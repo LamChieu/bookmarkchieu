@@ -5,7 +5,7 @@ import deleteBookMark from '../../api/deleteBookMark'
 const BookMark = props => {
     const { _id, title, url, img } = props.bookMark
 
-    const { isShowFormUpdate, show, setCurrent} = props
+    const { isShowFormUpdate, show, setCurrent } = props
 
     const handleClickUpdate = () => {
         isShowFormUpdate(!show)
@@ -20,27 +20,30 @@ const BookMark = props => {
         deleteBookMark.delete({ id: _id })
     }
 
-    return <li className="bookmark">
-        <div className="content">
-            <p>{title}</p>
-            <a href={url}>{url}</a>
-            {
-                img !== undefined && <img height="300px" width="400px" src={`
+    return <li className="container bookmark">
+        <div className="category-item">
+            <div className="item-img">
+                {
+                    img !== undefined && <img height="100px" width="40px" src={`
                 data:${img.contentType};base64,${img.data}
                 `} alt="img" />
-            }
-        </div>
-
-        <div className="action">
-            <div className="icon" onClick={handleClickUpdate}>
-                <img src="https://www.flaticon.com/svg/static/icons/svg/3983/3983278.svg" alt="icon"/>
+                }
             </div>
+            <div className="item-content">
+                <p className="title">{title}</p> <br />
+                <a href={url}>{url}</a>
+            </div>
+            <div className="action">
+                <div className="icon" onClick={handleClickUpdate}>
+                    <img src="https://www.flaticon.com/svg/static/icons/svg/3983/3983278.svg" alt="icon" />
+                </div>
 
-            <div className="icon" onClick={handleClickDelete}>
-                <img src="https://www.flaticon.com/svg/static/icons/svg/3221/3221897.svg" alt="icon" />
+                <div className="icon" onClick={handleClickDelete}>
+                    <img src="https://www.flaticon.com/svg/static/icons/svg/3221/3221897.svg" alt="icon" />
+                </div>
             </div>
         </div>
     </li>;
 }
- 
+
 export default BookMark;

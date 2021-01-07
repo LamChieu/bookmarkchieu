@@ -1,0 +1,10 @@
+.add  input, .add button {
+    padding: 8px;
+    margin: 80px 5px;
+    width: 30%;
+}
+
+.add button {
+    width: 8%;
+    cursor: pointer;
+}

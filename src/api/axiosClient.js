@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "https://chieu-backend.herokuapp.com/",
+ //baseURL: "https://chieu-backend.herokuapp.com/",
+  baseURL: "http://localhost:7000/",
 });
 
 axiosClient.interceptors.request.use(async (config) => {

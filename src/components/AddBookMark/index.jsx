@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import addBookMark from '../../api/addBookMark';
+import './style.css'
 
 const AddBookMark = props => {
     const [title, setTitle] = useState('')
@@ -26,10 +27,9 @@ const AddBookMark = props => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
-            <input type="text" value={title} onChange={handleTitle}/>
-            <input type="text" value={url} onChange={handleUrl}/>
-
+        <form className = "add container" onSubmit={handleSubmit}>
+            <input type="text" placeholder ="Title" value={title} onChange={handleTitle}/>
+            <input type="text" placeholder ="Url" value={url} onChange={handleUrl}/>
             <button type='submit'>Add</button>
         </form>
     );

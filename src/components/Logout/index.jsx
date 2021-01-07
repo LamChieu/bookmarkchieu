@@ -8,7 +8,7 @@ const Logout = props => {
         id('')
     }
 
-    return <button onClick={handleClickLogout}>Logout</button>;
+    return <button className = "logout" onClick={handleClickLogout}>Logout</button>;
 }
  
 export default Logout;
